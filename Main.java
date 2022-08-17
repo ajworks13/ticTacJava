@@ -4,16 +4,36 @@ class Main {
 
 	//global
 
-	private static void theGameBoard(String choice){
+	private static void referee(){
+		
+	}
+
+	private static void theGameBoard(String choice, String whichPlayer){
 		String[][][] gameBoard = new String[][][]{{
 			{"_","_","_"},
 			{"_","_","_"},
 			{"_","_","_"}
 		},};
+		String[][][] thePlayersDecisions = new String[][][]{
+			{
+				{"","",""},
+				{"","",""},
+				{"","",""}
+			},
+		};
 
-		if(choice.equals("1")){
-			gameBoard[0][0][0] = "X";
+		if(gameBoard[0][0][0].equals("X") && thePlayersDecisions[0][0][0].equals("player1")){
+			do{
+				
+			}while()
 		}
+
+		if(choice.equals("1") && whichPlayer.equals("player1")){
+			gameBoard[0][0][0] = "X";
+			thePlayersDecisions[0][0][0] = "player1";
+		}
+
+		
 
 		for(int x = 0; x < gameBoard.length; x++){
 			for(int y = 0; y < gameBoard[x].length; y++){
@@ -29,8 +49,8 @@ class Main {
 	
   public static void main(String args[]) { 
 		boolean gameOver = false;
-		String player1 = "Player1";
-		String player2 = "Player2";
+		String player1Name = "player1";
+		String player2Name = "player2";
 		
 		/*
 		String[][][] gameBoard = new String[][][]{{
@@ -51,12 +71,12 @@ class Main {
 			System.out.println("Player 1, GO!\nType one number from 1 through 9 ");
 			String p1Choice = sc.nextLine();
 			
-			theGameBoard(p1Choice);
+			theGameBoard(p1Choice, player1Name);
 
 			System.out.println("Player 2! Go\nType one number from 1 through 9");
 			String p2Choice = sc.nextLine();
 
-			theGameBoard(p2Choice)
+			theGameBoard(p2Choice,player2Name);
 			
 		}while(gameOver != true);
 /*
