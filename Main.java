@@ -1,12 +1,43 @@
 import java.util.*;
 
 class Main {  
-  public static void main(String args[]) { 
+
+	//global
+
+	private static void theGameBoard(String choice){
 		String[][][] gameBoard = new String[][][]{{
-			{"1","2","3"},
-			{"4","5","6"},
-			{"7","8","9"}
+			{"_","_","_"},
+			{"_","_","_"},
+			{"_","_","_"}
 		},};
+
+	}
+	
+  public static void main(String args[]) { 
+		boolean gameOver = false;
+		/*
+		String[][][] gameBoard = new String[][][]{{
+			{"_","_","_"},
+			{"_","_","_"},
+			{"_","_","_"}
+		},};
+		*/
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Player 1, Enter your name to start playing:");
+		String player1 = sc.nextLine();
+
+		System.out.println("Player 2, Enter your name to start playing with " + player1);
+		String player2 = sc.nextLine();
+
+		do{
+			System.out.println("Player 1, GO!\nSelect from 1 - 9 ");
+			String p1Choice = sc.nextLine();
+
+
+			theGameBoard(p1Choice);
+			
+		}while(gameOver != true);
 
 		for(int x = 0; x < gameBoard.length; x++){
 			for(int y = 0; y < gameBoard[x].length; y++){
@@ -17,5 +48,11 @@ class Main {
 			}
 			System.out.println("");
 		}
-  } 
+
+
+		
+  } // main
+
+
+	
 }
